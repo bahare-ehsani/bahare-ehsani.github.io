@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bahare Ehsani — Linux · DevOps · Infrastructure</title>
+<meta name="description" content="Bahare Ehsani — IT infrastructure & networking background, focused on Linux, DevOps and automation." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230E1F16'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='17' font-weight='700' fill='%23D9A441' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="portfolio-styles.css" />
+<script>document.documentElement.classList.add('js');</script>
+<script src="portfolio-script.js" defer></script>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav id="nav" aria-label="Primary">
+  <div class="nav-inner">
+    <a class="brand" href="#top">B<em>.</em>E</a>
+    <div class="route" id="route">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <a class="avail" href="#contact"><span class="dot"></span>say hello</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="menu">menu</button>
+  </div>
+  <div class="trace" aria-hidden="true">
+    <div class="nodes" id="nodes"></div>
+    <div class="packet" id="packet"></div>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu-top">
+    <span class="brand">B<em style="color:var(--gold);font-style:normal">.</em>E</span>
+    <button class="menu-close" id="menuClose">close ×</button>
+  </div>
+  <div class="menu-links">
+    <a href="#about" style="transition-delay:.06s"><span>U1</span>About</a>
+    <a href="#skills" style="transition-delay:.12s"><span>U2</span>Skills</a>
+    <a href="#projects" style="transition-delay:.18s"><span>U3</span>Projects</a>
+    <a href="#experience" style="transition-delay:.24s"><span>U4</span>Experience</a>
+    <a href="#education" style="transition-delay:.30s"><span>U5</span>Education</a>
+    <a href="#contact" style="transition-delay:.36s"><span>U6</span>Contact</a>
+  </div>
+  <div class="menu-foot">bahare@infra — copper trace edition</div>
+</div>
+
+<main>
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="hero-grid-bg"></div>
+  <div class="aura aura-a" id="auraA"></div>
+  <div class="aura aura-b" id="auraB"></div>
+  <div class="glow" id="glow" aria-hidden="true"></div>
+
+  <svg class="hero-traces" viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <g fill="none" stroke-width="1.5">
+      <path d="M-20 640 H240 L300 580 H520 L560 620 H760" stroke="rgba(180,106,44,.30)"/>
+      <path class="flow" d="M-20 640 H240 L300 580 H520 L560 620 H760" stroke="rgba(224,145,63,.55)"/>
+      <path d="M1220 180 H980 L920 240 H700 L660 200 H520" stroke="rgba(15,118,110,.28)"/>
+      <path class="flow" d="M1220 180 H980 L920 240 H700 L660 200 H520" stroke="rgba(15,118,110,.5)" style="animation-duration:34s"/>
+      <path d="M120 820 V700 L180 640" stroke="rgba(180,106,44,.22)"/>
+    </g>
+    <g>
+      <circle cx="760" cy="620" r="5" fill="none" stroke="rgba(180,106,44,.5)" stroke-width="1.5"/>
+      <circle cx="760" cy="620" r="2" fill="#D9A441"/>
+      <circle cx="520" cy="200" r="5" fill="none" stroke="rgba(15,118,110,.5)" stroke-width="1.5"/>
+      <circle cx="520" cy="200" r="2" fill="#0F766E"/>
+      <circle cx="240" cy="640" r="3.5" fill="none" stroke="rgba(180,106,44,.45)" stroke-width="1.5"/>
+    </g>
+  </svg>
+
+  <div class="wrap">
+    <div class="hero-cols">
+      <div>
+        <p class="kicker rise d1">REF: U0 · hello, world</p>
+        <h1 class="rise d2">Bahare<span class="last">Ehsani</span></h1>
+        <p class="role rise d3">linux · devops · automation · infrastructure</p>
+        <p class="intro rise d3">
+          I come from <strong>IT infrastructure and computer networking</strong> — and these days
+          I spend my time building with Linux, DevOps, and automation.
+          This is my corner of the internet: calm, precise, and a little bit warm.
+        </p>
+        <div class="term rise d4" role="img" aria-label="Terminal: whoami returns linux, devops, automation">
+          <span class="p">bahare@infra</span>:~$ whoami<br />
+          <span class="out">→ linux · devops · automation</span><span class="caret"></span>
+        </div>
+        <div class="cta-row rise d5">
+          <a class="btn btn-solid" href="#projects">View projects
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+          <a class="btn btn-ghost" href="#contact">Say hello</a>
+        </div>
+      </div>
+
+      <div class="rise d4">
+        <div class="photo-zone">
+          <span class="tick tl"></span><span class="tick tr"></span><span class="tick bl"></span><span class="tick br"></span>
+          <div class="photo">
+            <!-- When the real photo arrives, this inner block becomes: <img src="..." alt="Portrait of Bahare Ehsani" style="width:100%;height:100%;object-fit:cover"> -->
+            <svg class="ph-traces" viewBox="0 0 320 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <g fill="none" stroke="rgba(217,164,65,.28)" stroke-width="1.2">
+                <path d="M-10 60 H80 L120 100 V180"/>
+                <path d="M330 320 H240 L200 280 V220"/>
+                <path d="M40 410 V340 L80 300"/>
+                <path d="M290 -10 V60 L250 100"/>
+              </g>
+              <g fill="none" stroke="rgba(224,145,63,.5)" stroke-width="1.2">
+                <circle cx="120" cy="180" r="4"/><circle cx="200" cy="220" r="4"/>
+                <circle cx="80" cy="300" r="4"/><circle cx="250" cy="100" r="4"/>
+              </g>
+            </svg>
+            <div class="ph-inner">
+              <span class="mono-mark">Be</span>
+              <span class="ph-cap">portrait</span>
+              <span class="ph-sub">— coming soon —</span>
+            </div>
+          </div>
+          <div class="photo-chip"><b>●</b> bahare@infra</div>
+        </div>
+        <p class="fig">FIG. 01 — your photo lives here</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section class="sec" id="about">
+  <div class="wrap">
+    <div class="about-cols">
+      <div class="about-sticky" data-reveal>
+        <div class="sec-head" style="margin-bottom:0">
+          <p class="ref">U1 · About</p>
+          <h2>A bit<br />about me.</h2>
+          <div class="under"></div>
+        </div>
+      </div>
+      <div class="about-body">
+        <p class="lead" data-reveal>I'm Bahare — someone who likes systems that <strong>quietly work</strong>.</p>
+        <p data-reveal style="--d:.08s">
+          My background is in <strong>IT infrastructure and computer networking</strong>, and my current focus is
+          <strong>Linux, DevOps, and automation</strong>: the tools and habits that keep modern systems reliable.
+          I enjoy the layer most people never see — the configs, the services, the small decisions that make
+          everything above them feel effortless.
+        </p>
+        <p data-reveal style="--d:.14s">
+          I care about the craft: clean configuration, understanding what happens under the hood, and building
+          things that are as maintainable as they are dependable. Not chasing trends — building a foundation.
+        </p>
+        <blockquote class="quote" data-reveal style="--d:.2s">
+          “Good infrastructure is invisible — you only notice it when it's missing.”
+        </blockquote>
+        <div class="values" data-reveal style="--d:.26s">
+          <span class="value">reliability</span>
+          <span class="value">clarity</span>
+          <span class="value">curiosity</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= SKILLS ================= -->
+<section class="sec tint" id="skills">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="ref">U2 · Skills</p>
+      <h2>The toolkit.</h2>
+      <div class="under"></div>
+      <p class="sec-note">// what I came up through, and where I'm building now.</p>
+    </div>
+    <div class="legend" data-reveal>
+      <span><i class="f"></i>current focus</span>
+      <span><i class="d"></i>developing</span>
+      <span><i class="b"></i>foundation</span>
+    </div>
+    <div class="skills-grid">
+      <div class="chip-card" data-reveal>
+        <div class="chip-top"><span class="chip-idx">IC · 01</span><span class="tier focus">focus</span></div>
+        <h3>Linux &amp; Systems</h3>
+        <p>Linux administration in lab environments, including users and permissions, services, shell usage, system configuration, and basic server hardening.</p>
+        <div class="chip-spec"><span>tools: <b>Linux · Bash</b></span><span>state: <span class="st-focus">active focus</span></span></div>
+      </div>
+      <div class="chip-card" data-reveal style="--d:.08s">
+        <div class="chip-top"><span class="chip-idx">IC · 02</span><span class="tier dev">developing</span></div>
+        <h3>DevOps &amp; Delivery</h3>
+        <p>Hands-on practice with version control, CI/CD workflows, containerizing applications, and deploying a static site through GitHub Actions.</p>
+        <div class="chip-spec"><span>tools: <b>Git · Docker · CI/CD</b></span><span>state: <span class="st-dev">developing</span></span></div>
+      </div>
+      <div class="chip-card" data-reveal style="--d:.14s">
+        <div class="chip-top"><span class="chip-idx">IC · 03</span><span class="tier focus">focus</span></div>
+        <h3>Automation &amp; Monitoring</h3>
+        <p>Writing Bash and Python scripts for system tasks and service checks, working with Ansible, and using Zabbix for infrastructure monitoring.</p>
+        <div class="chip-spec"><span>tools: <b>Bash · Python · Ansible · Zabbix</b></span><span>state: <span class="st-focus">active focus</span></span></div>
+      </div>
+      <div class="chip-card" data-reveal style="--d:.2s">
+        <div class="chip-top"><span class="chip-idx">IC · 04</span><span class="tier base">foundation</span></div>
+        <h3>Infrastructure &amp; Networking</h3>
+        <p>Professional experience supporting IT infrastructure and networks, including Active Directory and Group Policy, Cisco switches, firewall rules, server monitoring, and troubleshooting.</p>
+        <div class="chip-spec"><span>tools: <b>AD · Cisco · Firewalls</b></span><span>state: <span class="st-base">foundation</span></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PROJECTS ================= -->
+<section class="sec" id="projects">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="ref">U3 · Projects</p>
+      <h2>Modules on the board.</h2>
+      <div class="under"></div>
+      <p class="sec-note">// selected hands-on projects · code and implementation details on GitHub.</p>
+    </div>
+    <div class="modules">
+      <a class="module" href="https://github.com/bahare-ehsani/log-archive-tool" target="_blank" rel="noopener noreferrer" aria-label="Log Archive Tool — view on GitHub" data-reveal>
+        <span class="m-idx">M·01</span>
+        <div>
+          <div class="m-title-row">
+            <h3>Log Archive Tool</h3>
+            <span class="badge done">completed</span>
+          </div>
+          <p>A Bash-based utility for creating and managing log archives. Built as a practical command-line project and documented for reuse.</p>
+          <div class="tags"><span class="tag">bash</span><span class="tag">linux</span><span class="tag">shell scripting</span></div>
+        </div>
+        <span class="m-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="module" href="https://github.com/bahare-ehsani/nginx-log-analyser" target="_blank" rel="noopener noreferrer" aria-label="Nginx Log Analyser — view on GitHub" data-reveal style="--d:.06s">
+        <span class="m-idx">M·02</span>
+        <div>
+          <div class="m-title-row">
+            <h3>Nginx Log Analyser</h3>
+            <span class="badge done">completed</span>
+          </div>
+          <p>A shell script that analyses Nginx access logs and reports useful summaries, including frequent IP addresses, requested paths, and HTTP status codes.</p>
+          <div class="tags"><span class="tag">bash</span><span class="tag">nginx</span><span class="tag">log analysis</span></div>
+        </div>
+        <span class="m-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="module" href="https://github.com/bahare-ehsani/server-stats" target="_blank" rel="noopener noreferrer" aria-label="Server Stats — view on GitHub" data-reveal style="--d:.12s">
+        <span class="m-idx">M·03</span>
+        <div>
+          <div class="m-title-row">
+            <h3>Server Stats</h3>
+            <span class="badge done">completed</span>
+          </div>
+          <p>A command-line system statistics utility created to practise Linux administration and collect key server health information.</p>
+          <div class="tags"><span class="tag">bash</span><span class="tag">linux</span><span class="tag">system monitoring</span></div>
+        </div>
+        <span class="m-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="module" href="https://github.com/bahare-ehsani/gh-deployment-workflow" target="_blank" rel="noopener noreferrer" aria-label="GitHub Pages Deployment — view on GitHub" data-reveal style="--d:.18s">
+        <span class="m-idx">M·04</span>
+        <div>
+          <div class="m-title-row">
+            <h3>GitHub Pages Deployment</h3>
+            <span class="badge done">completed</span>
+          </div>
+          <p>A deployment workflow built with Astro and GitHub Actions to automate the build and deployment of a website to GitHub Pages whenever relevant changes are pushed to the main branch.</p>
+          <div class="tags"><span class="tag">astro</span><span class="tag">github actions</span><span class="tag">github pages</span><span class="tag">ci/cd</span></div>
+        </div>
+        <span class="m-arrow" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ================= EXPERIENCE ================= -->
+<section class="sec tint" id="experience">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="ref">U4 · Experience</p>
+      <h2>Where I've worked.</h2>
+      <div class="under"></div>
+      <p class="sec-note">// professional roles across operations, networking, and support.</p>
+    </div>
+    <div class="xp-list">
+
+      <div class="xp-company" data-reveal>
+        <div class="xp-head">
+          <h3>Behine Sazan Toos Co. (BSTC)</h3>
+          <span class="xp-meta">full-time · 4 yrs 10 mos · on-site</span>
+        </div>
+        <div class="xp-roles">
+          <div class="xp-role now">
+            <div class="xp-title"><h4>IT Operations &amp; Monitoring Specialist</h4><span class="badge now">present</span></div>
+            <p class="xp-when">Apr 2025 — Present · 1 yr 8 mos</p>
+            <p class="xp-loc">Mashhad, Razavi Khorasan, Iran</p>
+            <p>Server data monitoring and collection, with Python scripting for service monitoring and SMS alerting.</p>
+            <div class="tags"><span class="tag">python</span><span class="tag">monitoring</span><span class="tag">sms alerting</span></div>
+          </div>
+          <div class="xp-role">
+            <div class="xp-title"><h4>DevOps Engineer (Junior)</h4></div>
+            <p class="xp-when">May 2024 — Mar 2025 · 11 mos</p>
+            <p class="xp-loc">Mashhad, Razavi Khorasan, Iran</p>
+            <p>Automated routine administrative tasks with Bash scripts, built and maintained CI/CD pipelines in GitLab CI/CD, containerized applications with Docker, and adjusted Nginx configurations to project requirements.</p>
+            <div class="tags"><span class="tag">bash script</span><span class="tag">zabbix</span><span class="tag">gitlab ci</span><span class="tag">docker</span><span class="tag">nginx</span></div>
+          </div>
+          <div class="xp-role">
+            <div class="xp-title"><h4>Computer Network Engineer</h4></div>
+            <p class="xp-when">Feb 2022 — May 2024 · 2 yrs 4 mos</p>
+            <p class="xp-loc">Mashhad, Razavi Khorasan, Iran</p>
+            <p>Managed Active Directory and Group Policy, configured Cisco switches, and implemented rules on Kerio, FortiGate, and Cisco ASA firewalls. Maintained Windows updates through WSUS and monitored servers and network switches to keep infrastructure available and performing.</p>
+            <div class="tags"><span class="tag">MCSA · CCNA</span><span class="tag">cisco asa · fortigate · kerio</span><span class="tag">vmware vsphere · veeam backup &amp; replication</span><span class="tag">veeam one · opmanager</span><span class="tag">hardware &amp; software troubleshooting</span><span class="tag">visio</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xp-company xp-offset" data-reveal style="--d:.08s">
+        <div class="xp-head">
+          <h3>ShahrIT Co</h3>
+          <span class="xp-meta">full-time · 4 mos · on-site</span>
+        </div>
+        <div class="xp-roles single">
+          <div class="xp-role">
+            <div class="xp-title"><h4>Computer Network Engineer</h4></div>
+            <p class="xp-when">Oct 2021 — Jan 2022 · 4 mos</p>
+            <p class="xp-loc">Mashhad, Razavi Khorasan, Iran</p>
+            <p>Troubleshot server issues and provided on-site IT support at Ghasr Talaee Hotel, a company client — handling employee support calls and hardware/software problems. Inspected and troubleshot devices returned by clients under support contracts.</p>
+            <div class="tags"><span class="tag">active directory · kerio</span><span class="tag">vmware esxi · veeam backup</span><span class="tag">kaspersky antivirus</span><span class="tag">network &amp; hardware troubleshooting</span><span class="tag">technical support</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="xp-company xp-offset-lg" data-reveal style="--d:.14s">
+        <div class="xp-head">
+          <h3>Komakresani Co</h3>
+          <span class="xp-meta">full-time · 8 mos · on-site</span>
+        </div>
+        <div class="xp-roles single">
+          <div class="xp-role">
+            <div class="xp-title"><h4>Hardware &amp; Software Technical Support</h4></div>
+            <p class="xp-when">Jul 2020 — Feb 2021 · 8 mos</p>
+            <p class="xp-loc">Mashhad, Razavi Khorasan, Iran</p>
+            <p>Tested a public-facing website to identify functional issues and prepare technical documentation, and supported the company's IT systems through software installation, hardware/software troubleshooting, and issue resolution.</p>
+            <div class="tags"><span class="tag">hardware &amp; network troubleshooting</span><span class="tag">technical support · CRM</span><span class="tag">microsoft office · adobe photoshop</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= EDUCATION ================= -->
+<section class="sec" id="education">
+  <div class="wrap">
+    <div class="sec-head" data-reveal>
+      <p class="ref">U5 · Education</p>
+      <h2>Where I learned.</h2>
+      <div class="under"></div>
+      <p class="sec-note">// academic background and relevant technical learning.</p>
+    </div>
+    <div class="tl">
+      <div class="tl-item" data-reveal>
+        <p class="tl-when">2016 — 2019 <span class="badge acad">academic</span></p>
+        <h3>MSc in Computer Networking</h3>
+        <p class="tl-inst">Islamic Azad University</p>
+        <p>Advanced academic study in computer networks and related infrastructure concepts.</p>
+      </div>
+      <div class="tl-item" data-reveal style="--d:.06s">
+        <p class="tl-when">2011 — 2015 <span class="badge acad">academic</span></p>
+        <h3>BSc in Information Technology</h3>
+        <p class="tl-inst">University of Birjand</p>
+        <p>Foundational education in information technology, computing, and IT systems.</p>
+      </div>
+      <div class="tl-item" data-reveal style="--d:.12s">
+        <p class="tl-when"><span class="badge done">completed · score: 100</span></p>
+        <h3>Introductory DevOps Training</h3>
+        <p class="tl-inst">Kando · Tehran</p>
+        <p>Completed a beginner-level DevOps course, building foundational knowledge of DevOps tools and practices.</p>
+      </div>
+      <div class="tl-item" data-reveal style="--d:.18s">
+        <p class="tl-when"><span class="badge done">completed</span></p>
+        <h3>LPIC-1 Preparation Course</h3>
+        <p class="tl-inst">Kando · Tehran</p>
+        <p>Completed an LPIC-1 preparation course, building practical knowledge of Linux system administration, command-line operations, and core system management.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section class="sec" id="contact">
+  <div class="wrap">
+    <div class="board" data-reveal>
+      <svg class="corner" viewBox="0 0 340 220" aria-hidden="true">
+        <g fill="none" stroke="rgba(217,164,65,.35)" stroke-width="1.3">
+          <path d="M340 30 H220 L180 70 V140"/>
+          <path d="M340 90 H260 L230 120"/>
+          <path d="M200 -10 V50 L160 90"/>
+        </g>
+        <g fill="none" stroke="rgba(224,145,63,.6)" stroke-width="1.3">
+          <circle cx="180" cy="140" r="4.5"/><circle cx="230" cy="120" r="4.5"/><circle cx="160" cy="90" r="4.5"/>
+        </g>
+        <circle cx="180" cy="140" r="1.8" fill="#D9A441"/>
+        <circle cx="160" cy="90" r="1.8" fill="#D9A441"/>
+      </svg>
+      <p class="ref">U6 · Contact</p>
+      <h2>Let's build something <em>reliable.</em></h2>
+      <p class="lead">
+        Whether it's a project, a problem to solve, or just a conversation about infrastructure —
+        my inbox is open, and I read everything.
+      </p>
+      <a class="btn btn-gold" href="https://github.com/bahare-ehsani" target="_blank" rel="noopener noreferrer">
+        github.com/bahare-ehsani
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <div class="socials">
+        <span class="lbl">or find me on</span>
+        <a class="soc" href="https://github.com/bahare-ehsani" target="_blank" rel="noopener noreferrer"><i></i>GitHub</a>
+        <a class="soc" href="https://www.linkedin.com/in/bahare-ehsani/" target="_blank" rel="noopener noreferrer"><i></i>LinkedIn</a>
+        <a class="soc" href="mailto:bahare.ehsani.dev@gmail.com"><i></i>bahare.ehsani.dev@gmail.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="wrap foot">
+    <span class="l"><i></i>© 2026 Bahare Ehsani</span>
+    <span>copper trace edition · crafted with care · <a href="#top">back to top ↑</a></span>
+  </div>
+</footer>
+
+</body>
+</html>
