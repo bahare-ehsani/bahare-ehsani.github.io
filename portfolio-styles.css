@@ -337,11 +337,20 @@ footer{border-top:1px solid var(--line);padding:26px 0}
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 34'%3E%3Cg fill='none' stroke='%23B46A2C' stroke-opacity='.45' stroke-width='1.4'%3E%3Cpath d='M2 24 H96 L116 10 H184 L204 24 H298'/%3E%3C/g%3E%3Cg fill='none' stroke='%23B46A2C' stroke-opacity='.65' stroke-width='1.4'%3E%3Ccircle cx='96' cy='24' r='4'/%3E%3Ccircle cx='204' cy='24' r='4'/%3E%3C/g%3E%3Cg fill='none' stroke='%230F766E' stroke-opacity='.55' stroke-width='1.4'%3E%3Ccircle cx='150' cy='10' r='3.5'/%3E%3C/g%3E%3Ccircle cx='96' cy='24' r='1.8' fill='%23D9A441'/%3E%3Ccircle cx='204' cy='24' r='1.8' fill='%23D9A441'/%3E%3C/svg%3E");
   }
 
-  /* justified body copy across the stacked layout */
+  /* justified body copy — hyphenation kept rare and well-formed */
   .intro,.about-body p,.quote,.sec-note,.chip-card p,.module p,
   .xp-role p,.tl-item p,.board .lead{
     text-align:justify;text-justify:inter-word;
-    hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;
+    hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;
+    hyphenate-limit-chars:7 3 3;
+    -webkit-hyphenate-limit-before:3;-webkit-hyphenate-limit-after:3;
+    hyphenate-limit-lines:2;-webkit-hyphenate-limit-lines:2;
+    hyphenate-limit-zone:12%;
+    overflow-wrap:break-word;
+  }
+  /* metadata lines stay unbroken */
+  .xp-when,.xp-loc,.tl-inst,.tl-when{
+    text-align:left;hyphens:manual;-webkit-hyphens:manual;overflow-wrap:normal;
   }
 }
 @media (max-width:860px){
@@ -358,6 +367,22 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .xp-list{gap:40px}
   .xp-company.xp-offset{margin-top:14px}
   .xp-company.xp-offset-lg{margin-top:24px}
+
+  /* wider measure + slightly smaller type → fewer line breaks per paragraph */
+  .wrap,.nav-inner{padding-left:16px;padding-right:16px}
+  .intro,.about-body p{font-size:15.25px}
+  .about-body .lead{font-size:16.5px}
+  .quote{font-size:17.5px}
+  .chip-card{padding:22px 18px 20px}
+  .chip-card p{font-size:13.75px}
+  .module{padding:20px 18px}
+  .module p{font-size:13.5px}
+  .xp-role p{font-size:13.5px}
+  .tl-item p{font-size:13.5px}
+  .board{padding:30px 22px}
+  .board .lead{font-size:15.25px}
+  .sec-note{font-size:11px;letter-spacing:.02em;hyphens:manual;-webkit-hyphens:manual}
+  .btn-gold{font-size:clamp(11px,3.2vw,14px);padding:12px 18px;max-width:100%;white-space:nowrap}
 
   /* U1 — three value pills on a single, evenly sized row */
   .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
