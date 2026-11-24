@@ -328,6 +328,7 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .about-cols{grid-template-columns:1fr}
   .about-sticky{position:static}
 
+  /* hero trace: full-bleed crop replaced by a compact, fully visible motif above the frame */
   .hero-traces{display:none}
   .photo-zone::before{
     content:"";position:absolute;left:50%;top:-52px;transform:translateX(-50%);
@@ -336,38 +337,50 @@ footer{border-top:1px solid var(--line);padding:26px 0}
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 34'%3E%3Cg fill='none' stroke='%23B46A2C' stroke-opacity='.45' stroke-width='1.4'%3E%3Cpath d='M2 24 H96 L116 10 H184 L204 24 H298'/%3E%3C/g%3E%3Cg fill='none' stroke='%23B46A2C' stroke-opacity='.65' stroke-width='1.4'%3E%3Ccircle cx='96' cy='24' r='4'/%3E%3Ccircle cx='204' cy='24' r='4'/%3E%3C/g%3E%3Cg fill='none' stroke='%230F766E' stroke-opacity='.55' stroke-width='1.4'%3E%3Ccircle cx='150' cy='10' r='3.5'/%3E%3C/g%3E%3Ccircle cx='96' cy='24' r='1.8' fill='%23D9A441'/%3E%3Ccircle cx='204' cy='24' r='1.8' fill='%23D9A441'/%3E%3C/svg%3E");
   }
 
-  /* FIXED: Preserve justify, but eliminate auto-hyphenation to prevent excessive splitting */
-  .intro, .about-body p, .quote, .sec-note, .chip-card p, .module p,
-  .xp-role p, .tl-item p, .board .lead {
-    text-align: justify;
-    text-justify: inter-word;
-    hyphens: manual; /* Prevents automatic hyphenation; allows manual &shy; if explicitly needed */
-    -webkit-hyphens: manual;
-    -ms-hyphens: manual;
-    hyphenate-limit-chars: 8 4 4; /* Stricter fallback limit: min 8 chars, 4 before/after hyphen */
-    -webkit-hyphenate-limit-before: 4;
-    -webkit-hyphenate-limit-after: 4;
-    hyphenate-limit-lines: 3; /* Prevents consecutive hyphenated lines */
-    -webkit-hyphenate-limit-lines: 3;
-    overflow-wrap: break-word; /* Safely breaks only unbreakable long words */
-    word-break: normal; /* Prevents aggressive mid-word breaks */
+  /* justified body copy — hyphenation kept rare and well-formed for wider blocks */
+  .intro,.about-body p,.quote,.sec-note,.xp-role p,.tl-item p,.board .lead{
+    text-align:justify;text-justify:inter-word;
+    hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto;
+    hyphenate-limit-chars:7 3 3;
+    -webkit-hyphenate-limit-before:3;-webkit-hyphenate-limit-after:3;
+    hyphenate-limit-lines:2;-webkit-hyphenate-limit-lines:2;
+    hyphenate-limit-zone:12%;
+    overflow-wrap:break-word;
+  }
+  
+  /* U2 — Skills: prevent aggressive WebKit hyphenation; left alignment avoids rivers in narrow cards */
+  .chip-card p{
+    font-size:14px;
+    text-align:left;
+    text-justify:auto;
+    hyphens:manual;
+    -webkit-hyphens:manual;
+    -ms-hyphens:manual;
+    overflow-wrap:break-word;
+    word-break:normal;
   }
 
-  /* Metadata lines stay unbroken */
-  .xp-when, .xp-loc, .tl-inst, .tl-when {
-    text-align: left;
-    hyphens: manual;
-    -webkit-hyphens: manual;
-    overflow-wrap: normal;
-    word-break: normal;
+  /* U3 — Projects: manual hyphens stop aggressive splitting; slight word-spacing prevents justified rivers */
+  .module p{
+    text-align:justify;
+    text-justify:inter-word;
+    hyphens:manual;
+    -webkit-hyphens:manual;
+    -ms-hyphens:manual;
+    overflow-wrap:break-word;
+    word-break:normal;
+    word-spacing:-0.02em;
+  }
+
+  /* metadata lines stay unbroken */
+  .xp-when,.xp-loc,.tl-inst,.tl-when{
+    text-align:left;hyphens:manual;-webkit-hyphens:manual;overflow-wrap:normal;
   }
 }
-
 @media (max-width:860px){
   .route,.avail{display:none}
   .menu-btn{display:inline-flex}
 }
-
 @media (max-width:640px){
   .skills-grid{grid-template-columns:1fr}
   .module{grid-template-columns:1fr;gap:12px;padding:22px}
@@ -379,6 +392,7 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .xp-company.xp-offset{margin-top:14px}
   .xp-company.xp-offset-lg{margin-top:24px}
 
+  /* wider measure + slightly smaller type → fewer line breaks per paragraph */
   .wrap,.nav-inner{padding-left:16px;padding-right:16px}
   .intro,.about-body p{font-size:15.25px}
   .about-body .lead{font-size:16.5px}
@@ -392,7 +406,7 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .sec-note{font-size:11px;letter-spacing:.02em;hyphens:manual;-webkit-hyphens:manual}
   .btn-gold{font-size:clamp(11px,3.2vw,14px);padding:12px 18px;max-width:100%;white-space:nowrap}
 
-  /* U2/U3 — optimized typography: compact type, zero auto-hyphenation */
+  /* U2 — maximum usable width, compact type, zero hyphenation */
   .chip-card{padding:22px 16px 20px}
   .chip-card p{font-size:13.25px;line-height:1.72}
   .chip-card h3{font-size:22px}
@@ -423,26 +437,12 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .socials .soc{justify-content:center;padding:9px 12px;font-size:12px;white-space:nowrap}
   .socials .soc:last-child{grid-column:1/-1;font-size:clamp(9.5px,2.9vw,12px)}
 }
-
-/* Targeted fix for very narrow viewports (320px - 375px) to prevent excessive word spacing */
-@media (max-width: 375px) {
-  /* U2 and U3 sections: switch to left alignment to maintain readability without hyphenation or huge gaps */
-  .chip-card p, .module p, .xp-role p, .tl-item p {
-    text-align: left;
-    text-justify: auto;
-  }
-  
-  /* Ensure padding is optimal for 320px screens to prevent clipping or horizontal overflow */
-  .chip-card, .module {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
-}
-
 @media (max-width:359px){
   .xp-role .tags{grid-template-columns:1fr}
-} (`.module p`, `.xp-role p`, `.tl-item p`), the alignment gracefully degrades to `text-align: left`. This directly prevents the "excessively large spaces between words" that occur when forcing justification without hyphenation on tiny screens.
-5. **Overflow Protection**: Ensured `overflow-wrap: break-word` and `word-break: normal` are applied globally to mobile text. This guarantees that exceptionally long words (like URLs or technical terms) will wrap safely without clipping or causing horizontal overflow, while normal words remain intact.
-6. **Padding Adjustment**: Added a minor padding reduction (`14px`) for `.chip-card` and `.module` at the `375px` breakpoint to maximize the available text width, further reducing the chance of awkward line breaks on 320px devices. 
-
-All desktop layouts, colors, typography scales, and unrelated CSS rules remain completely untouched.
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  html.js [data-reveal]{opacity:1!important;transform:none!important}
+  .glow{display:none}
+}
