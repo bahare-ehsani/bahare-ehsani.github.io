@@ -321,6 +321,50 @@ footer{border-top:1px solid var(--line);padding:26px 0}
 .foot .l i{width:6px;height:6px;border-radius:50%;background:var(--gold);font-style:normal;animation:pulse 2.2s infinite}
 .foot a{color:var(--copper-text)} .foot a:hover{text-decoration:underline}
 
+/* ============ DESKTOP PARAGRAPH ALIGNMENT ============ */
+/* Applied to base; mobile media queries will override as needed */
+.intro, .about-body p, .about-body .lead, .quote, .xp-role p, .tl-item p, .board .lead {
+  text-align: justify;
+  text-justify: inter-word;
+  hyphens: auto;
+  -webkit-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphenate-limit-chars: 8 3 3;
+  -webkit-hyphenate-limit-before: 3;
+  -webkit-hyphenate-limit-after: 3;
+  hyphenate-limit-lines: 2;
+  -webkit-hyphenate-limit-lines: 2;
+  hyphenate-limit-zone: 12%;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Optimal line lengths for justified text to prevent "rivers" */
+.about-body .lead { max-width: 65ch; }
+.quote { max-width: 60ch; }
+.tl-item p { max-width: 65ch; }
+
+/* Short descriptive texts in cards/modules: left alignment prevents rivers in constrained blocks */
+.chip-card p, .module p {
+  text-align: left;
+  text-justify: auto;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+/* Metadata and short mono-spaced notes: prevent any hyphenation */
+.sec-note, .xp-when, .xp-loc, .tl-inst, .tl-when {
+  text-align: left;
+  hyphens: manual;
+  -webkit-hyphens: manual;
+  -ms-hyphens: manual;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
 /* ============ responsive ============ */
 @media (max-width:960px){
   .hero-cols{grid-template-columns:1fr;gap:64px}
