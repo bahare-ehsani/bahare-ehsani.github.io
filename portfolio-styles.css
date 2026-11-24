@@ -327,6 +327,22 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .photo-zone{width:min(100%,320px)}
   .about-cols{grid-template-columns:1fr}
   .about-sticky{position:static}
+
+  /* hero trace: full-bleed crop replaced by a compact, fully visible motif above the frame */
+  .hero-traces{display:none}
+  .photo-zone::before{
+    content:"";position:absolute;left:50%;top:-52px;transform:translateX(-50%);
+    width:min(100%,300px);height:34px;pointer-events:none;
+    background-repeat:no-repeat;background-position:center;background-size:contain;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 34'%3E%3Cg fill='none' stroke='%23B46A2C' stroke-opacity='.45' stroke-width='1.4'%3E%3Cpath d='M2 24 H96 L116 10 H184 L204 24 H298'/%3E%3C/g%3E%3Cg fill='none' stroke='%23B46A2C' stroke-opacity='.65' stroke-width='1.4'%3E%3Ccircle cx='96' cy='24' r='4'/%3E%3Ccircle cx='204' cy='24' r='4'/%3E%3C/g%3E%3Cg fill='none' stroke='%230F766E' stroke-opacity='.55' stroke-width='1.4'%3E%3Ccircle cx='150' cy='10' r='3.5'/%3E%3C/g%3E%3Ccircle cx='96' cy='24' r='1.8' fill='%23D9A441'/%3E%3Ccircle cx='204' cy='24' r='1.8' fill='%23D9A441'/%3E%3C/svg%3E");
+  }
+
+  /* justified body copy across the stacked layout */
+  .intro,.about-body p,.quote,.sec-note,.chip-card p,.module p,
+  .xp-role p,.tl-item p,.board .lead{
+    text-align:justify;text-justify:inter-word;
+    hyphens:auto;-webkit-hyphens:auto;overflow-wrap:break-word;
+  }
 }
 @media (max-width:860px){
   .route,.avail{display:none}
@@ -342,6 +358,34 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .xp-list{gap:40px}
   .xp-company.xp-offset{margin-top:14px}
   .xp-company.xp-offset-lg{margin-top:24px}
+
+  /* U1 — three value pills on a single, evenly sized row */
+  .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+  .value{justify-content:center;white-space:nowrap;gap:5px;padding:6px 6px;
+    font-size:clamp(9px,2.6vw,11px);letter-spacing:.03em}
+  .value::before{width:4px;height:4px;flex-shrink:0}
+
+  /* U2 — legend on one line */
+  .legend{flex-wrap:nowrap;gap:10px;font-size:clamp(9px,2.5vw,10.5px);letter-spacing:.03em}
+  .legend span{gap:6px;white-space:nowrap}
+  .legend i{width:6px;height:6px;flex-shrink:0}
+
+  /* U2 — identical spec layout on every skill card */
+  .chip-spec{flex-direction:column;flex-wrap:nowrap;align-items:flex-start;gap:5px}
+
+  /* U4 — skill chips aligned to an even grid */
+  .xp-role .tags{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin-top:12px}
+  .xp-role .tag{display:flex;align-items:center;border-radius:10px;padding:7px 10px;
+    font-size:10px;line-height:1.4;letter-spacing:.02em}
+
+  /* U6 — GitHub + LinkedIn share a row, email spans the full width */
+  .socials{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:30px;padding-top:24px}
+  .socials .lbl{grid-column:1/-1;margin-right:0}
+  .socials .soc{justify-content:center;padding:9px 12px;font-size:12px;white-space:nowrap}
+  .socials .soc:last-child{grid-column:1/-1;font-size:clamp(9.5px,2.9vw,12px)}
+}
+@media (max-width:359px){
+  .xp-role .tags{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
