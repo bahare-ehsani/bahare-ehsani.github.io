@@ -348,6 +348,12 @@ footer{border-top:1px solid var(--line);padding:26px 0}
     hyphenate-limit-zone:12%;
     overflow-wrap:break-word;
   }
+  /* U2 — no word splitting at all: clean ragged edge instead of hyphens */
+  .chip-card p{
+    font-size:14px;text-align:left;text-justify:auto;
+    hyphens:none;-webkit-hyphens:none;-ms-hyphens:none;
+    overflow-wrap:normal;word-break:normal;
+  }
   /* metadata lines stay unbroken */
   .xp-when,.xp-loc,.tl-inst,.tl-when{
     text-align:left;hyphens:manual;-webkit-hyphens:manual;overflow-wrap:normal;
@@ -373,8 +379,6 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .intro,.about-body p{font-size:15.25px}
   .about-body .lead{font-size:16.5px}
   .quote{font-size:17.5px}
-  .chip-card{padding:22px 18px 20px}
-  .chip-card p{font-size:13.75px}
   .module{padding:20px 18px}
   .module p{font-size:13.5px}
   .xp-role p{font-size:13.5px}
@@ -383,6 +387,12 @@ footer{border-top:1px solid var(--line);padding:26px 0}
   .board .lead{font-size:15.25px}
   .sec-note{font-size:11px;letter-spacing:.02em;hyphens:manual;-webkit-hyphens:manual}
   .btn-gold{font-size:clamp(11px,3.2vw,14px);padding:12px 18px;max-width:100%;white-space:nowrap}
+
+  /* U2 — maximum usable width, compact type, zero hyphenation */
+  .chip-card{padding:22px 16px 20px}
+  .chip-card p{font-size:13.25px;line-height:1.72}
+  .chip-card h3{font-size:22px}
+  .chip-spec{font-size:10.5px;letter-spacing:.04em}
 
   /* U1 — three value pills on a single, evenly sized row */
   .values{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
